@@ -1,0 +1,43 @@
+ENGLISH
+-------
+1 - Author => Properties: AuthorId, FullName, Birthday, Biography
+
+2 - Publisher => Properties: PublisherId, Name => Gamze
+2.5 Publisher Controller => Esra
+
+
+
+3 - Book => Properties: BookId, Name, Author, AuthorId, PageCount
+UnitPrice, Publisher, PublisherId, Details, PublishDate, UnitsInStock,IsActive,TotalSell => Salih
+
+3.5 Emre Hoca
+
+4 - Category => Properties: CategoryId, Name (Book n-n) => Hakan
+
+4.5 İlhan Cem
+
+5 - User => Properties: UserId, 
+FullName, Email, PhoneNumber, 
+Password , 
+IsActive => 
+
+5.5 => 
+
+6 - CartItem => Properties: CartItemId, Book, BookId, Quantity,SubTotalPrice 
+CartId, Card, IsActive =>  Furkan
+6.5 Sena
+
+7 - Cart => Properties: CartId(User 1-1), TotalPrice => Talha
+7.5 Serdar
+
+8 - Address => Properties: AddressID, Title,City,Town,Detail,User, UserID => Erdem
+8.5 Erdem
+
+9 - Order => Properties: OrderId, Address,AddressID, TotalPrice,OrderDate => Fatih
+9.5 => Fatih
+
+10 - Comment => Properties: CommentId, BookId, CommentText, UserId, Date, IsApproved 
+=>Yakup 
+
+10.5 => Birol
+
