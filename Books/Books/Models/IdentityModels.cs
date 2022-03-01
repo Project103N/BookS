@@ -31,5 +31,6 @@ namespace Books.Models
         }
         public virtual DbSet<Author> Authors { get; set; }
         public virtual DbSet<Publisher> Publishers { get; set; }
+        public virtual DbSet<Address> Addresses { get; set; }
     }
 }

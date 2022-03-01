@@ -23,6 +23,7 @@ namespace Books.Models
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 
         public virtual DbSet<Author> Authors { get; set; }
+        public virtual DbSet<Address> Addresses { get; set; }
         public virtual DbSet<Publisher> Publishers { get; set; }
     }
 }
