@@ -173,6 +173,7 @@
     <Compile Include="Controllers\AddressesController.cs" />
     <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\BookController.cs" />
+    <Compile Include="Controllers\CartsController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -216,12 +217,15 @@
     <Compile Include="Migrations\202203011505452_m9.Designer.cs">
       <DependentUpon>202203011505452_m9.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202203011634261_m10.cs" />
+    <Compile Include="Migrations\202203011634261_m10.Designer.cs">
+      <DependentUpon>202203011634261_m10.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Book.cs" />
-    <Compile Include="Models\BooksContext.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Category.cs" />
@@ -312,6 +316,11 @@
     <Content Include="Views\Comment\Details.cshtml" />
     <Content Include="Views\Comment\Edit.cshtml" />
     <Content Include="Views\Comment\Index.cshtml" />
+    <Content Include="Views\Carts\Create.cshtml" />
+    <Content Include="Views\Carts\Delete.cshtml" />
+    <Content Include="Views\Carts\Details.cshtml" />
+    <Content Include="Views\Carts\Edit.cshtml" />
+    <Content Include="Views\Carts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -356,6 +365,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203011505452_m9.resx">
       <DependentUpon>202203011505452_m9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203011634261_m10.resx">
+      <DependentUpon>202203011634261_m10.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
