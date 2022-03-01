@@ -21,7 +21,7 @@ namespace Books.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("DefaultConnection")
         {
         }
 
@@ -29,5 +29,7 @@ namespace Books.Models
         {
             return new ApplicationDbContext();
         }
+        public virtual DbSet<Author> Authors { get; set; }
+        public virtual DbSet<Publisher> Publishers { get; set; }
     }
 }
