@@ -174,6 +174,7 @@
     <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\CartsController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -221,6 +222,10 @@
     <Compile Include="Migrations\202203011634261_m10.cs" />
     <Compile Include="Migrations\202203011634261_m10.Designer.cs">
       <DependentUpon>202203011634261_m10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203011702480_m12_CategoryController.cs" />
+    <Compile Include="Migrations\202203011702480_m12_CategoryController.Designer.cs">
+      <DependentUpon>202203011702480_m12_CategoryController.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -328,6 +333,11 @@
     <Content Include="Views\Orders\Details.cshtml" />
     <Content Include="Views\Orders\Edit.cshtml" />
     <Content Include="Views\Orders\Index.cshtml" />
+    <Content Include="Views\Category\Create.cshtml" />
+    <Content Include="Views\Category\Delete.cshtml" />
+    <Content Include="Views\Category\Details.cshtml" />
+    <Content Include="Views\Category\Edit.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -375,6 +385,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203011634261_m10.resx">
       <DependentUpon>202203011634261_m10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203011702480_m12_CategoryController.resx">
+      <DependentUpon>202203011702480_m12_CategoryController.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
