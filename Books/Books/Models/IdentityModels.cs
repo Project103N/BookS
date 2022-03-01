@@ -32,5 +32,12 @@ namespace Books.Models
         public virtual DbSet<Author> Authors { get; set; }
         public virtual DbSet<Publisher> Publishers { get; set; }
         public virtual DbSet<Address> Addresses { get; set; }
+        public virtual DbSet<Book> Books { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

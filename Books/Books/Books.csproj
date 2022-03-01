@@ -172,6 +172,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AddressesController.cs" />
     <Compile Include="Controllers\AuthorController.cs" />
+    <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PublisherController.cs" />
@@ -198,11 +199,28 @@
     <Compile Include="Migrations\202203011321073_m5.Designer.cs">
       <DependentUpon>202203011321073_m5.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202203011432357_m6_book_class_add.cs" />
+    <Compile Include="Migrations\202203011432357_m6_book_class_add.Designer.cs">
+      <DependentUpon>202203011432357_m6_book_class_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203011435462_m7_book_class_add.cs" />
+    <Compile Include="Migrations\202203011435462_m7_book_class_add.Designer.cs">
+      <DependentUpon>202203011435462_m7_book_class_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203011443498_m8_Book_Controller_Added.cs" />
+    <Compile Include="Migrations\202203011443498_m8_Book_Controller_Added.Designer.cs">
+      <DependentUpon>202203011443498_m8_Book_Controller_Added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203011505452_m9.cs" />
+    <Compile Include="Migrations\202203011505452_m9.Designer.cs">
+      <DependentUpon>202203011505452_m9.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Author.cs" />
-    <Compile Include="Models\BooksContext.cs" />
+    <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Publisher.cs" />
@@ -280,6 +298,11 @@
     <Content Include="Views\Addresses\Details.cshtml" />
     <Content Include="Views\Addresses\Edit.cshtml" />
     <Content Include="Views\Addresses\Index.cshtml" />
+    <Content Include="Views\Book\Create.cshtml" />
+    <Content Include="Views\Book\Delete.cshtml" />
+    <Content Include="Views\Book\Details.cshtml" />
+    <Content Include="Views\Book\Edit.cshtml" />
+    <Content Include="Views\Book\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -312,6 +335,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203011321073_m5.resx">
       <DependentUpon>202203011321073_m5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203011432357_m6_book_class_add.resx">
+      <DependentUpon>202203011432357_m6_book_class_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203011435462_m7_book_class_add.resx">
+      <DependentUpon>202203011435462_m7_book_class_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203011443498_m8_Book_Controller_Added.resx">
+      <DependentUpon>202203011443498_m8_Book_Controller_Added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203011505452_m9.resx">
+      <DependentUpon>202203011505452_m9.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
