@@ -7,6 +7,7 @@ namespace Books.Models
 {
     public class Cart
     {
+        public int CartID { get; set; }
         public int TotalPrice { get; set; }
         public ApplicationUser ApplicationUser { get; set; }
     }
