@@ -7,7 +7,7 @@ namespace Books.Models
 {
     public class CartItem
     {
-        public int CardItemID { get; set; }
+        public int CartItemID { get; set; }
         public Book Book { get; set; }
         public int BookID { get; set; }
         public int Quantity { get; set; }
