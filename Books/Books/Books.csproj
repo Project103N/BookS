@@ -173,12 +173,29 @@
     <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PublisherController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202202281512370_first_migration.cs" />
     <Compile Include="Migrations\202202281512370_first_migration.Designer.cs">
       <DependentUpon>202202281512370_first_migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203011302419_mig2_publisher_controller.cs" />
+    <Compile Include="Migrations\202203011302419_mig2_publisher_controller.Designer.cs">
+      <DependentUpon>202203011302419_mig2_publisher_controller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203011312102_m3.cs" />
+    <Compile Include="Migrations\202203011312102_m3.Designer.cs">
+      <DependentUpon>202203011312102_m3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203011317596_m4_publisher_controller.cs" />
+    <Compile Include="Migrations\202203011317596_m4_publisher_controller.Designer.cs">
+      <DependentUpon>202203011317596_m4_publisher_controller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203011321073_m5.cs" />
+    <Compile Include="Migrations\202203011321073_m5.Designer.cs">
+      <DependentUpon>202203011321073_m5.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -251,6 +268,11 @@
     <Content Include="Views\Author\Details.cshtml" />
     <Content Include="Views\Author\Edit.cshtml" />
     <Content Include="Views\Author\Index.cshtml" />
+    <Content Include="Views\Publisher\Create.cshtml" />
+    <Content Include="Views\Publisher\Delete.cshtml" />
+    <Content Include="Views\Publisher\Details.cshtml" />
+    <Content Include="Views\Publisher\Edit.cshtml" />
+    <Content Include="Views\Publisher\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -271,6 +293,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202202281512370_first_migration.resx">
       <DependentUpon>202202281512370_first_migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203011302419_mig2_publisher_controller.resx">
+      <DependentUpon>202203011302419_mig2_publisher_controller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203011312102_m3.resx">
+      <DependentUpon>202203011312102_m3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203011317596_m4_publisher_controller.resx">
+      <DependentUpon>202203011317596_m4_publisher_controller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203011321073_m5.resx">
+      <DependentUpon>202203011321073_m5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
