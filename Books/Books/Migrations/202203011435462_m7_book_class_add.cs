@@ -11,6 +11,7 @@ namespace Books.Migrations
                 "dbo.Books",
                 c => new
                     {
+
                         BookId = c.Int(nullable: false, identity: true),
                         Name = c.String(),
                         AuthorId = c.Int(nullable: false),
