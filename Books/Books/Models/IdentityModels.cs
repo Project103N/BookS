@@ -35,6 +35,7 @@ namespace Books.Models
         public virtual DbSet<Book> Books { get; set; }
         public virtual DbSet<Comment> Comments { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
