@@ -41,5 +41,7 @@ namespace Books.Models
         {
             base.OnModelCreating(modelBuilder);
         }
+
+        public System.Data.Entity.DbSet<Books.Models.Cart> Carts { get; set; }
     }
 }
