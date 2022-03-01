@@ -171,6 +171,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AuthorController.cs" />
+    <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PublisherController.cs" />
@@ -204,6 +205,10 @@
     <Compile Include="Migrations\202203011435462_m7_book_class_add.cs" />
     <Compile Include="Migrations\202203011435462_m7_book_class_add.Designer.cs">
       <DependentUpon>202203011435462_m7_book_class_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203011443498_m8_Book_Controller_Added.cs" />
+    <Compile Include="Migrations\202203011443498_m8_Book_Controller_Added.Designer.cs">
+      <DependentUpon>202203011443498_m8_Book_Controller_Added.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -282,6 +287,11 @@
     <Content Include="Views\Publisher\Details.cshtml" />
     <Content Include="Views\Publisher\Edit.cshtml" />
     <Content Include="Views\Publisher\Index.cshtml" />
+    <Content Include="Views\Book\Create.cshtml" />
+    <Content Include="Views\Book\Delete.cshtml" />
+    <Content Include="Views\Book\Details.cshtml" />
+    <Content Include="Views\Book\Edit.cshtml" />
+    <Content Include="Views\Book\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -320,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203011435462_m7_book_class_add.resx">
       <DependentUpon>202203011435462_m7_book_class_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203011443498_m8_Book_Controller_Added.resx">
+      <DependentUpon>202203011443498_m8_Book_Controller_Added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
