@@ -172,6 +172,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\BookController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PublisherController.cs" />
@@ -215,6 +216,7 @@
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\BooksContext.cs" />
+    <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Publisher.cs" />
@@ -292,6 +294,11 @@
     <Content Include="Views\Book\Details.cshtml" />
     <Content Include="Views\Book\Edit.cshtml" />
     <Content Include="Views\Book\Index.cshtml" />
+    <Content Include="Views\Comment\Create.cshtml" />
+    <Content Include="Views\Comment\Delete.cshtml" />
+    <Content Include="Views\Comment\Details.cshtml" />
+    <Content Include="Views\Comment\Edit.cshtml" />
+    <Content Include="Views\Comment\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
