@@ -210,11 +210,15 @@
     <Compile Include="Migrations\202203011443498_m8_Book_Controller_Added.Designer.cs">
       <DependentUpon>202203011443498_m8_Book_Controller_Added.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202203011505452_m9.cs" />
+    <Compile Include="Migrations\202203011505452_m9.Designer.cs">
+      <DependentUpon>202203011505452_m9.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Book.cs" />
-    <Compile Include="Models\BooksContext.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Publisher.cs" />
@@ -333,6 +337,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203011443498_m8_Book_Controller_Added.resx">
       <DependentUpon>202203011443498_m8_Book_Controller_Added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203011505452_m9.resx">
+      <DependentUpon>202203011505452_m9.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

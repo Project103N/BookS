@@ -8,6 +8,10 @@ namespace Books.Models
 {
     public class Book
     {
+        public Book()
+        {
+            this.Categories = new HashSet<Category>();
+        }
 
         public int BookId { get; set; }
         public string Name { get; set; }
@@ -23,6 +27,8 @@ namespace Books.Models
         public decimal TotalSell { get; set; }
         public int PublisherId { get; set; }
         public virtual Publisher Publisher { get; set; }
+
+        public ICollection<Category> Categories { get; set; }
 
 
     }
