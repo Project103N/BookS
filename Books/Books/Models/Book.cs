@@ -24,7 +24,5 @@ namespace Books.Models
         public virtual Publisher Publisher { get; set; }
 
 
-
-
     }
 }
