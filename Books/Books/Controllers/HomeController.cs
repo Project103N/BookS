@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Books.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,19 @@ namespace Books.Controllers
 {
     public class HomeController : Controller
     {
+        ApplicationDbContext db = new ApplicationDbContext();
+        //HomePageContainer content = new HomePageContainer();
         public ActionResult Index()
         {
-            return View();
+            //content.Categories = db.Categories.ToList();
+            //content.TopSellers = 
+            return View(db.Books.OrderByDescending(c => c.TotalSell).ToList());
+        }
+
+        public List<Book> Price(int min, int max)
+        {
+            //content.PriceRanges = db.Books.Where(x => (x.UnitPrice >= min && x.UnitPrice <= max)).ToList();
+            return db.Books.Where(x => (x.UnitPrice >= min && x.UnitPrice <= max)).ToList();
         }
 
         public ActionResult About()

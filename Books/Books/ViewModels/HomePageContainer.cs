@@ -12,5 +12,8 @@ namespace BookS.Models
         public ICollection<Book> TopSellers { get; set; }
         public ApplicationUser CurrentUser { get; set; }
         public ICollection<Author> AuthorsOfMonth { get; set; }
+
+        public ICollection<Book> PriceRanges { get; set; }
+        public ICollection<Book> Prices { get; set; }
     }
 }
