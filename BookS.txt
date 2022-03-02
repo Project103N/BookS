@@ -1,27 +1,46 @@
 Admin Sayfası için tasarım yapılıp giydirilecek.
 ------------------------------------------------
  * Admin Paneli tasarlanacak. (Front-End)
+	Mehmet Demir
+
+
+Tema Seçimi ve template e uygulanması
+-------------------------------------
+	Erdem
 
 
 Front-End ve Backend işleri
-----------------
-* Anasayfa tasarlanacak
+---------------------------
+* Anasayfa tasarlanacak (Fatih-Birol)
 	(kitap yurdu veya idefix örnek alınabilir. Çok satanlar kategorisi en üstte olabilir.
 	Yada yeni çıkanlar.) Menü aracılığı ile tüm kategorilerin sayfalarına erişilebilecek.
 	Filtreleme(isim,fiyat,tarih, yorum sayısı)
 
-* Kategori sayfası tasarlanacak.
+* Kategori sayfası tasarlanacak. (Esra Gamze)
 	Her kategori de kategori içinde arama yapılabilecek bir arama alanı olacak.
 	Kategorinin yeni çıkanları en üstte fotoğrafları ile birlikte listelenecek.
 
 * Yazar sayfası. Yazarın fotoğrafı, biyografisi ve sonrasında tarihe göre sıralanmış 
-	kitapları.
+	kitapları. (Sena Talha)
 
-* Kitap sayfası tasarlanacak(Kitap detay)
+* Kitap sayfası tasarlanacak(Kitap detay) (Salih, Emre Hoca, Hakan)
 	Fotoğraf,Adı,Yazar yayın evi gibi bilgiler tek bir sayfada olacak.
 	Kitap yorumları altta listelenecek.(kitap yurdu veya idefix örnek alınabilir.)
 	Yazarın diğer kitapları bir kenarda listelensin.
 
-* Profile sayfası düzenlenecek tasarım olarak.
+* Profile sayfası düzenlenecek tasarım olarak. (Mehmet Demir)
+
+Fotoğrafların eklenmesi: Kitap,Kullanıcı
+------------------------------------------------------------------------------
+(Birol)
+
+Sepet (Serdar, İlhan Cem, Furkan)
+-----
+	Sepete ekle butonuna tıklandığında sepete ekleme işi,
+	Sepetten silme işi
+	Sepet tutarı hesaplama işi(jQuery kullanılabilir)
+	Siparişi tamamlama işi sepetitemlar veritabanına kaydetme vs.
+
+
 
 
