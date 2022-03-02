@@ -7,7 +7,7 @@ Tema Seçimi ve template e uygulanması
 	Erdem
 Front-End ve Backend işleri
 ---------------------------
-* Anasayfa tasarlanacak (Fatih-Birol)
+* Anasayfa tasarlanacak (Fatih-Birol-Cem)
 	(kitap yurdu veya idefix örnek alınabilir. Çok satanlar kategorisi en üstte olabilir.
 	Yada yeni çıkanlar.) Menü aracılığı ile tüm kategorilerin sayfalarına erişilebilecek.
 	Filtreleme(isim,fiyat,tarih, yorum sayısı)
@@ -27,7 +27,7 @@ Fotoğrafların eklenmesi: Kitap,Kullanıcı
 ------------------------------------------------------------------------------
 (Birol)
 
-Sepet (Serdar, İlhan Cem, Furkan)
+Sepet (Serdar, Furkan)
 -----
 	Sepete ekle butonuna tıklandığında sepete ekleme işi,
 	Sepetten silme işi
