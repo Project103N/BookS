@@ -1,0 +1,22 @@
+﻿@using Books.Models
+@model Books.ViewModels.CategoryPageContent
+
+@{
+    ViewBag.Title = "HomePage";
+}
+
+<h2>HomePage</h2>
+
+<div>
+    <h4>CategoryPageContent</h4>
+    <hr />
+    @foreach (Book book in Model.NewBooks)
+    {
+        <h1> @book.Name </h1>
+    }
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

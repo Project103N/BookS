@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Books.Models;
+using Books.ViewModels;
 
 namespace Books.Controllers
 {
@@ -113,6 +114,15 @@ namespace Books.Controllers
             db.Categories.Remove(category);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+
+        public ActionResult HomePage()
+        {
+            CategoryPageContent cpc = new CategoryPageContent();
+            cpc.NewBooks = db.Books.ToList();
+            cpc.AllCategoryBooks = db.Books.ToList();
+            return View(cpc);
         }
 
         protected override void Dispose(bool disposing)
