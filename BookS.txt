@@ -1,0 +1,27 @@
+Admin Sayfası için tasarım yapılıp giydirilecek.
+------------------------------------------------
+ * Admin Paneli tasarlanacak. (Front-End)
+
+
+Front-End ve Backend işleri
+----------------
+* Anasayfa tasarlanacak
+	(kitap yurdu veya idefix örnek alınabilir. Çok satanlar kategorisi en üstte olabilir.
+	Yada yeni çıkanlar.) Menü aracılığı ile tüm kategorilerin sayfalarına erişilebilecek.
+	Filtreleme(isim,fiyat,tarih, yorum sayısı)
+
+* Kategori sayfası tasarlanacak.
+	Her kategori de kategori içinde arama yapılabilecek bir arama alanı olacak.
+	Kategorinin yeni çıkanları en üstte fotoğrafları ile birlikte listelenecek.
+
+* Yazar sayfası. Yazarın fotoğrafı, biyografisi ve sonrasında tarihe göre sıralanmış 
+	kitapları.
+
+* Kitap sayfası tasarlanacak(Kitap detay)
+	Fotoğraf,Adı,Yazar yayın evi gibi bilgiler tek bir sayfada olacak.
+	Kitap yorumları altta listelenecek.(kitap yurdu veya idefix örnek alınabilir.)
+	Yazarın diğer kitapları bir kenarda listelensin.
+
+* Profile sayfası düzenlenecek tasarım olarak.
+
+
