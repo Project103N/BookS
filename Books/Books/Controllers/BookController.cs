@@ -7,28 +7,34 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Books.Models;
+using Books.Repositories;
 
 namespace Books.Controllers
 {
     public class BookController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-
+        private Book_EF_Repository _booksRepository { get; set; }
+        private Book_EF_Repository booksRepository
+        {
+            get
+            {
+                if (_booksRepository == null)
+                    _booksRepository = new Book_EF_Repository();
+                return _booksRepository;
+            }
+        }
         // GET: Book
         public ActionResult Index()
         {
             var books = db.Books.Include(b => b.Author).Include(b => b.Publisher);
-            return View(books.ToList());
+            return View(booksRepository.Get());
         }
 
         // GET: Book/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Book book = db.Books.Find(id);
+            Book book = booksRepository.Get(id);
             if (book == null)
             {
                 return HttpNotFound();
@@ -53,8 +59,7 @@ namespace Books.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Books.Add(book);
-                db.SaveChanges();
+                booksRepository.Add(book);
                 return RedirectToAction("Index");
             }
 
@@ -64,13 +69,9 @@ namespace Books.Controllers
         }
 
         // GET: Book/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Book book = db.Books.Find(id);
+            Book book = booksRepository.Get(id);
             if (book == null)
             {
                 return HttpNotFound();
@@ -89,8 +90,7 @@ namespace Books.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(book).State = EntityState.Modified;
-                db.SaveChanges();
+                booksRepository.Update(book);
                 return RedirectToAction("Index");
             }
             ViewBag.AuthorId = new SelectList(db.Authors, "AuthorID", "FullName", book.AuthorId);
@@ -99,13 +99,9 @@ namespace Books.Controllers
         }
 
         // GET: Book/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Book book = db.Books.Find(id);
+            Book book = booksRepository.Get(id);
             if (book == null)
             {
                 return HttpNotFound();
@@ -118,9 +114,8 @@ namespace Books.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Book book = db.Books.Find(id);
-            db.Books.Remove(book);
-            db.SaveChanges();
+            Book book = booksRepository.Get(id);
+            booksRepository.Remove(book);
             return RedirectToAction("Index");
         }
 

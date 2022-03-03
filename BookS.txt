@@ -34,6 +34,16 @@ Sepet (Serdar, Furkan)
 	Sepet tutarı hesaplama işi(jQuery kullanılabilir)
 	Siparişi tamamlama işi sepetitemlar veritabanına kaydetme vs.
 
+Repository sınıfları eklenecek.
+Controller'lar güncellenecek.
+------------------------------
+Addresses : Talha
+Carts	  : Serdar
+Comment	  : Salih
+Home      : Fatih
+Orders    : Hakan
+Publisher : Yakup
+
 
 
 

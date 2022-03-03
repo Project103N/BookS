@@ -8,27 +8,44 @@ using System.Web;
 using System.Web.Mvc;
 using Books.Models;
 using Books.ViewModels;
+using Books.Repositories;
 
 namespace Books.Controllers
 {
     public class CategoryController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private Category_EF_Repository _repository { get; set; }
+        private Category_EF_Repository repository
+        {
+            get
+            {
+                if (_repository == null)
+                    _repository = new Category_EF_Repository();
+                return _repository;
+            }
+        }
+        private Book_EF_Repository _booksRepository { get; set; }
+        private Book_EF_Repository booksRepository
+        {
+            get
+            {
+                if (_booksRepository == null)
+                    _booksRepository = new Book_EF_Repository();
+                return _booksRepository;
+            }
+        }
+
 
         // GET: Category
         public ActionResult Index()
         {
-            return View(db.Categories.ToList());
+            return View(repository.Get());
         }
 
         // GET: Category/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Category category = db.Categories.Find(id);
+            Category category = repository.Get(id);
             if (category == null)
             {
                 return HttpNotFound();
@@ -51,8 +68,7 @@ namespace Books.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Categories.Add(category);
-                db.SaveChanges();
+                repository.Add(category);
                 return RedirectToAction("Index");
             }
 
@@ -60,13 +76,9 @@ namespace Books.Controllers
         }
 
         // GET: Category/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Category category = db.Categories.Find(id);
+            Category category = repository.Get(id);
             if (category == null)
             {
                 return HttpNotFound();
@@ -83,21 +95,16 @@ namespace Books.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(category).State = EntityState.Modified;
-                db.SaveChanges();
+                repository.Update(category);
                 return RedirectToAction("Index");
             }
             return View(category);
         }
 
         // GET: Category/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Category category = db.Categories.Find(id);
+            Category category = repository.Get(id);
             if (category == null)
             {
                 return HttpNotFound();
@@ -110,18 +117,18 @@ namespace Books.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Category category = db.Categories.Find(id);
-            db.Categories.Remove(category);
-            db.SaveChanges();
+            Category category = repository.Get(id);
+            repository.Remove(category);
             return RedirectToAction("Index");
         }
 
 
+        // TODO: parametre olarak kategori id si alınıp. O kategorideki kitaplar listelenecek. Bunun için repository sınıfına metot eklemek gerekecek.
         public ActionResult HomePage()
         {
             CategoryPageContent cpc = new CategoryPageContent();
-            cpc.NewBooks = db.Books.ToList();
-            cpc.AllCategoryBooks = db.Books.ToList();
+            cpc.NewBooks = booksRepository.Get();
+            cpc.AllCategoryBooks = booksRepository.Get();
             return View(cpc);
         }
 
@@ -129,7 +136,7 @@ namespace Books.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                repository.db.Dispose();
             }
             base.Dispose(disposing);
         }

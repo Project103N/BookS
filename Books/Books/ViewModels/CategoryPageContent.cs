@@ -8,7 +8,7 @@ namespace Books.ViewModels
 {
     public class CategoryPageContent
     {
-        public ICollection<Book> NewBooks { get; set; }
-        public ICollection<Book> AllCategoryBooks { get; set; }
+        public IEnumerable<Book> NewBooks { get; set; }
+        public IEnumerable<Book> AllCategoryBooks { get; set; }
     }
 }
