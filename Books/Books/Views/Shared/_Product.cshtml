@@ -1,0 +1,152 @@
+﻿@model IEnumerable<Books.Models.Book>
+
+
+<main class="my-3">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-3">
+                <div class="card mb-2">
+                    <img class="card-img-top" src="https://kitapal.com/uploads/p/p/Gunay-Yayinlari-8-Sinif-Turkce-Zoom-Serisi-Soru-Bankasi_1.jpg" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Name</h5>
+                        <p class="card-text">Description</p>
+                        <a asp-controller="Product" asp-action="Details" asp-route-id="ProductId" class="btn btn-primary btn-sm">İncele</a>
+                        <a asp-controller="Product" asp-action="Edit" asp-route-id="ProductId" class="btn btn-primary btn-sm">Edit</a>
+                        <form method="POST" action="/product/delete" style="display: inline;">
+                            <input type="hidden" name="ProductId" value="ProductId">
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card mb-2">
+                    <img class="card-img-top" src="https://kitapal.com/uploads/p/p/Gunay-Yayinlari-8-Sinif-Turkce-Zoom-Serisi-Soru-Bankasi_1.jpg" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Name</h5>
+                        <p class="card-text">Description</p>
+                        <a asp-controller="Product" asp-action="Details" asp-route-id="ProductId" class="btn btn-primary btn-sm">İncele</a>
+                        <a asp-controller="Product" asp-action="Edit" asp-route-id="ProductId" class="btn btn-primary btn-sm">Edit</a>
+                        <form method="POST" action="/product/delete" style="display: inline;">
+                            <input type="hidden" name="ProductId" value="ProductId">
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card mb-2">
+                    <img class="card-img-top" src="https://kitapal.com/uploads/p/p/Gunay-Yayinlari-8-Sinif-Turkce-Zoom-Serisi-Soru-Bankasi_1.jpg" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Name</h5>
+                        <p class="card-text">Description</p>
+                        <a asp-controller="Product" asp-action="Details" asp-route-id="ProductId" class="btn btn-primary btn-sm">İncele</a>
+                        <a asp-controller="Product" asp-action="Edit" asp-route-id="ProductId" class="btn btn-primary btn-sm">Edit</a>
+                        <form method="POST" action="/product/delete" style="display: inline;">
+                            <input type="hidden" name="ProductId" value="ProductId">
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card mb-2">
+                    <img class="card-img-top" src="https://kitapal.com/uploads/p/p/Gunay-Yayinlari-8-Sinif-Turkce-Zoom-Serisi-Soru-Bankasi_1.jpg" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Name</h5>
+                        <p class="card-text">Description</p>
+                        <a asp-controller="Product" asp-action="Details" asp-route-id="ProductId" class="btn btn-primary btn-sm">İncele</a>
+                        <a asp-controller="Product" asp-action="Edit" asp-route-id="ProductId" class="btn btn-primary btn-sm">Edit</a>
+                        <form method="POST" action="/product/delete" style="display: inline;">
+                            <input type="hidden" name="ProductId" value="ProductId">
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</main>
+
+
+@*<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Author.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Publisher.PublisherName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PageCount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Details)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PublishDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitsInStock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalSell)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Publisher.PublisherName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PageCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Details)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublishDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitsInStock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalSell)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.BookId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.BookId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.BookId })
+            </td>
+        </tr>
+    }
+
+    </table>*@

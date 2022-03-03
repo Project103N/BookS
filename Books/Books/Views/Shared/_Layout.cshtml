@@ -4,41 +4,48 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - BookS Best addres to buy books</title>
-    @Styles.Render("~/Content/css")
+
+    @Styles.Render("~/Content/bootstrap.min.css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar bg-info navbar-expand-sm ">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("BookS", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
+
+
+            <ul class="navbar-nav">
+                <a href="/Home/Index" class="nav-link">Home</a>
+                <a href="/Home/About" class="nav-link">About</a>
+                <a href="/Home/Contact" class="nav-link">Contact</a>
+
+
+            </ul>
+
+
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                @*<button  class="btn btn-outline-success" type="submit">Search</button>*@
+                <a href="#" title="Img">
+                    <img src="https://www.freeiconspng.com/uploads/search-icon-png-1.png" width="50" alt="Download Search Icon" />
+                </a>
+            </form>
+            @Html.Partial("_LoginPartial")
+
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - BookS Corp.</p>
-        </footer>
+
     </div>
+    <footer class="py-5 bg-dark text-white text-center">
+        <p>&copy; @DateTime.Now.Year - BookS Corp.</p>
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/content/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
 </html>
+
