@@ -32,10 +32,11 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - BookS Corp.</p>
-        </footer>
+
     </div>
+    <footer class="py-5 bg-dark text-white text-center">
+        <p>&copy; @DateTime.Now.Year - BookS Corp.</p>
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

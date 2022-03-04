@@ -355,6 +355,7 @@
     <Content Include="Views\Category\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Category\HomePage.cshtml" />
+    <Content Include="Views\Shared\_BookList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

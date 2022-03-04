@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Books.Models.Book>
+
+
+
+    @foreach (var item in Model)
+    {
+        <div class="col-4 col-md-3 ">
+
+            <div class="thumbnail">
+                <img class="card-img-top" src="https://www.ucuzkitapal.com/images/thumbnails/500/500/detailed/15/9786257693622.webp" alt="">
+                <div class="caption">
+                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h5>
+                    <p class="card-text">@Html.DisplayFor(modelItem => item.Author.FullName)</p>
+                    <p class="card-text">@Html.DisplayFor(modelItem => item.UnitPrice)</p>
+                    <a href="" class="btn btn-primary btn-sm">İncele</a>
+                    <a href="#" class="btn btn-success btn-sm">Sepete Ekle</a>
+                </div>
+            </div>
+        </div>
+    }
