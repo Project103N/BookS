@@ -29,7 +29,6 @@ namespace Books.Repositories
         public IEnumerable<Book> Get()
         {
             return db.Books.Include(b => b.Author).Include(b => b.Publisher).ToList() ;
-
         }
 
         public Book Get(int id)
@@ -48,6 +47,25 @@ namespace Books.Repositories
             var updatedBook = db.Books.Attach(entity);
             db.Entry(updatedBook).State = EntityState.Modified;
             db.SaveChanges();
+        }
+
+        public List<Book> Price(int min, int max)
+        {
+            //content.PriceRanges = db.Books.Where(x => (x.UnitPrice >= min && x.UnitPrice <= max)).ToList();
+            return db.Books.Where(x => (x.UnitPrice >= min && x.UnitPrice <= max)).ToList();
+        }
+        public List<Book> SortByPublishDate()
+        {
+            return db.Books.OrderByDescending(x => x.PublishDate).ToList();
+        }
+        public List<Book> SortByPrice()
+        {
+
+            return db.Books.OrderByDescending(x => x.UnitPrice).ToList();
+        }
+        public List<Book> FilterByName(string name)
+        {
+            return db.Books.Where(x => x.Name.Contains(name)).ToList();
         }
     }
 }

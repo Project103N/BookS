@@ -1,0 +1,23 @@
+﻿@using Books.ViewModels
+
+@model CategoryPageContent
+@{
+    ViewBag.Title = "Category";
+}
+
+<h2>Category</h2>
+
+<h1>Kategorideki en yeni kitaplar</h1>
+<hr />
+<section id="newBooks">
+    @Html.Partial("_BookPartial", Model.NewBooks)
+</section>
+
+<br />
+<br />
+
+<h1>Kategorideki tüm kitaplar</h1>
+<hr />
+<section id="newBooks">
+    @Html.Partial("_BookPartial", Model.AllCategoryBooks)
+</section>
