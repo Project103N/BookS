@@ -7,28 +7,34 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Books.Models;
+using Books.Repositories;
 
 namespace Books.Controllers
 {
     public class OrdersController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private Orders_EF_Repository _repository { get; set; }
+        private Orders_EF_Repository repository
+        {
+            get
+            {
+                if (_repository == null)
+                    _repository = new Orders_EF_Repository();
+                return _repository;
+            }
+        }
 
         // GET: Orders
         public ActionResult Index()
         {
-            var orders = db.Orders.Include(o => o.Address);
-            return View(orders.ToList());
+            
+            return View(repository.Get());
         }
 
         // GET: Orders/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Order order = db.Orders.Find(id);
+        public ActionResult Details(int id)
+        {         
+            Order order = repository.Get(id);
             if (order == null)
             {
                 return HttpNotFound();
@@ -39,7 +45,7 @@ namespace Books.Controllers
         // GET: Orders/Create
         public ActionResult Create()
         {
-            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "Title");
+            //ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "Title");
             return View();
         }
 
@@ -52,28 +58,23 @@ namespace Books.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Orders.Add(order);
-                db.SaveChanges();
+                repository.Add(order);
                 return RedirectToAction("Index");
             }
 
-            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "Title", order.AddressID);
+            //ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "Title", order.AddressID);
             return View(order);
         }
 
         // GET: Orders/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Order order = db.Orders.Find(id);
+            Order order = repository.Get(id);
             if (order == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "Title", order.AddressID);
+            //ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "Title", order.AddressID);
             return View(order);
         }
 
@@ -86,22 +87,17 @@ namespace Books.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(order).State = EntityState.Modified;
-                db.SaveChanges();
+               repository.Update(order);
                 return RedirectToAction("Index");
             }
-            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "Title", order.AddressID);
+            //ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "Title", order.AddressID);
             return View(order);
         }
 
         // GET: Orders/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Order order = db.Orders.Find(id);
+            Order order = repository.Get(id);
             if (order == null)
             {
                 return HttpNotFound();
@@ -114,9 +110,8 @@ namespace Books.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Order order = db.Orders.Find(id);
-            db.Orders.Remove(order);
-            db.SaveChanges();
+            Order order = repository.Get(id);
+            repository.Remove(order);
             return RedirectToAction("Index");
         }
 
@@ -124,7 +119,7 @@ namespace Books.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                repository.db.Dispose();
             }
             base.Dispose(disposing);
         }
