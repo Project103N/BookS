@@ -277,6 +277,7 @@
     <Compile Include="Repositories\Book_EF_Repository.cs" />
     <Compile Include="Repositories\Category_EF_Repository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\Orders_EF_Repository.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CategoryPageContent.cs" />
     <Compile Include="ViewModels\HomePageContainer.cs" />
