@@ -7,27 +7,33 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Books.Models;
+using Books.Repositories;
 
 namespace Books.Controllers
 {
     public class AddressesController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private Addresses_EF_Repository _repository;
+        private Addresses_EF_Repository repository
+        {
+            get
+            {
+                if (_repository == null)
+                    _repository = new Addresses_EF_Repository();
+                return _repository;
+            }
+        }
 
         // GET: Addresses
         public ActionResult Index()
         {
-            return View(db.Addresses.ToList());
+            return View(repository.Get());
         }
 
         // GET: Addresses/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Address address = db.Addresses.Find(id);
+            Address address = repository.Get(id);
             if (address == null)
             {
                 return HttpNotFound();
@@ -50,8 +56,7 @@ namespace Books.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Addresses.Add(address);
-                db.SaveChanges();
+                repository.Add(address);
                 return RedirectToAction("Index");
             }
 
@@ -59,13 +64,10 @@ namespace Books.Controllers
         }
 
         // GET: Addresses/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Address address = db.Addresses.Find(id);
+
+            Address address = repository.Get(id);
             if (address == null)
             {
                 return HttpNotFound();
@@ -82,21 +84,16 @@ namespace Books.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(address).State = EntityState.Modified;
-                db.SaveChanges();
+                repository.Update(address);
                 return RedirectToAction("Index");
             }
             return View(address);
         }
 
         // GET: Addresses/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Address address = db.Addresses.Find(id);
+            Address address = repository.Get(id);
             if (address == null)
             {
                 return HttpNotFound();
@@ -109,9 +106,8 @@ namespace Books.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Address address = db.Addresses.Find(id);
-            db.Addresses.Remove(address);
-            db.SaveChanges();
+            Address address = repository.Get(id);
+            repository.Remove(address);
             return RedirectToAction("Index");
         }
 
@@ -119,7 +115,7 @@ namespace Books.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                repository.db.Dispose();
             }
             base.Dispose(disposing);
         }

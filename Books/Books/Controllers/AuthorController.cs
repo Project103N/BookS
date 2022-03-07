@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Books.Models;
+using Books.ViewModels;
 
 namespace Books.Controllers
 {
@@ -114,6 +115,15 @@ namespace Books.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult Details(int id)
+        {
+            AuthorPageContent apc = new AuthorPageContent();
+            apc.author = db.Authors.Find(id);
+            apc.AuthorsBook = db.Books.Where(i => i.AuthorId == apc.author.AuthorID).OrderByDescending(p => p.PublishDate).ToList();
+
+            return View(apc);
+        }
+
 
         protected override void Dispose(bool disposing)
         {
