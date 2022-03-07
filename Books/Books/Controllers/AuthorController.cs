@@ -118,8 +118,8 @@ namespace Books.Controllers
         public ActionResult Details(int id)
         {
             AuthorPageContent apc = new AuthorPageContent();
-            apc.author = db.Authors.Find(id);
-            apc.AuthorsBook = db.Books.Where(i => i.AuthorId == apc.author.AuthorID).OrderByDescending(p => p.PublishDate).ToList();
+            apc.Author = db.Authors.Find(id);
+            apc.AuthorsBooks = db.Books.Where(i => i.AuthorId == apc.Author.AuthorID).OrderByDescending(p => p.PublishDate).ToList();
 
             return View(apc);
         }

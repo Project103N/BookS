@@ -1,0 +1,22 @@
+﻿@using Books.ViewModels
+@model AuthorPageContent
+
+@{
+    ViewBag.Title = "Author";
+}
+
+<h2>Author</h2>
+<hr />
+<br />
+@Model.Author.FullName
+<br />
+@Model.Author.Biography
+<hr />
+<br />
+
+
+<h4>Yazarın Kitapları</h4>
+<section id="AuthorsBooks">
+    @Html.Partial("_BookPartial", Model.AuthorsBooks);
+</section>
+

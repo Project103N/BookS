@@ -48,5 +48,10 @@ namespace Books.Repositories
             db.Entry(updatedCategory).State = EntityState.Modified;
             db.SaveChanges();
         }
+        public IEnumerable<Book> GetAllCategoryBooks(int id)
+        {
+            Category ctg = db.Categories.Find(id);
+            return db.Books.Where(b => b.Categories.Any(c=>c.CategoryID==id)).ToList();
+        }
     }
 }
