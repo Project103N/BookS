@@ -8,7 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using Books.Models;
 using Books.Repositories;
-
+using System.IO;
+using System.Data.Entity.Infrastructure;
 namespace Books.Controllers
 {
     public class BookController : Controller
@@ -65,6 +66,12 @@ namespace Books.Controllers
 
             ViewBag.AuthorId = new SelectList(db.Authors, "AuthorID", "FullName", book.AuthorId);
             ViewBag.PublisherId = new SelectList(db.Publishers, "PublisherID", "PublisherName", book.PublisherId);
+            string fileName = Path.GetFileNameWithoutExtension(book.ImageFile.FileName);
+            string extension = Path.GetExtension(book.ImageFile.FileName);
+            fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+            book.Image = "../Image/" + fileName;
+            fileName = Path.Combine(Server.MapPath("../Image/"),fileName);
+            book.ImageFile.SaveAs(fileName);
             return View(book);
         }
 

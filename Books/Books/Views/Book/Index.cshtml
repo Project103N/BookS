@@ -41,47 +41,53 @@
         <th>
             @Html.DisplayNameFor(model => model.TotalSell)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Author.FullName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Publisher.PublisherName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PageCount)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UnitPrice)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Details)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PublishDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UnitsInStock)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsActive)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TotalSell)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.BookId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.BookId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.BookId })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Author.FullName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Publisher.PublisherName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PageCount)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UnitPrice)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Details)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PublishDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UnitsInStock)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.IsActive)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TotalSell)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Image)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.BookId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.BookId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.BookId })
+    </td>
+</tr>
 }
 
 </table>
