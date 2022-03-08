@@ -2,22 +2,16 @@
 
 @model CategoryPageContent
 @{
-    ViewBag.Title = "Category";
+    ViewBag.Title = Model.Category.CategoryName +" kitapları";
 }
+<section class="row">
+    <section id="newBooks" class="col-md-12">
+        <h4 class="alert alert-info">@Model.Category.CategoryName kategorisindeki en yeni kitaplar</h4>
 
-<h2>Category</h2>
-
-<h1>Kategorideki en yeni kitaplar</h1>
-<hr />
-<section id="newBooks">
-    @Html.Partial("_BookPartial", Model.NewBooks)
-</section>
-
-<br />
-<br />
-
-<h1>Kategorideki tüm kitaplar</h1>
-<hr />
-<section id="newBooks">
-    @Html.Partial("_BookPartial", Model.AllCategoryBooks)
+        @Html.Partial("_BookPartial", Model.NewBooks)
+    </section>
+    <section id="newBooks2" class="col-md-12">
+        <h4 class="alert alert-warning">@Model.Category.CategoryName kategorisindeki tüm kitaplar</h4>
+        @Html.Partial("_BookPartial", Model.AllCategoryBooks)
+    </section>
 </section>

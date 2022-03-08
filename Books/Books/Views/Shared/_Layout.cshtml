@@ -6,6 +6,7 @@
     <title>@ViewBag.Title - BookS Best addres to buy books</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("style",false)
 
 </head>
 <body>
@@ -31,11 +32,11 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - BookS Corp.</p>
-        </footer>
     </div>
+    <hr />
+    <footer class="text-center">
+        <p>&copy; @DateTime.Now.Year - BookS Corp.</p>
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

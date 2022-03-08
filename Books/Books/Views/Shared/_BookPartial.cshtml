@@ -1,10 +1,12 @@
-﻿@model IEnumerable<Books.Models.Book>
+@model IEnumerable<Books.Models.Book>
 
 @foreach (var item in Model)
 {
     <div class="col-4 col-md-3 " >
 
         <div class="thumbnail" >
+    <div class="col-4 col-md-3 ">
+        <div class="thumbnail">
             <a href="@Url.Action("Book","Home",new {id=item.BookId})">
                 @if (item.Image == null)
                 {
