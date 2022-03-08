@@ -2,31 +2,29 @@
 
 @foreach (var item in Model)
 {
-    <div class="col-4 col-md-3 " >
+            <div class="col-4 col-md-3 ">
+                <div class="thumbnail">
+                    <a href="@Url.Action("Book","Home",new {id=item.BookId})">
+                        @if (item.Image == null)
+                        {
+                            <img src="https://sciendo.com/product-not-found.png" class="card-img-top" style="height:250px" alt="book img" />
+                        }
+                        else
+                        {
+                            <img src="@Html.DisplayFor(modelItem => item.Image)" class="card-img-top" style="height:250px" alt="book img" />
+                        }
 
-        <div class="thumbnail" >
-    <div class="col-4 col-md-3 ">
-        <div class="thumbnail">
-            <a href="@Url.Action("Book","Home",new {id=item.BookId})">
-                @if (item.Image == null)
-                {
-                    <img src="https://sciendo.com/product-not-found.png" class="card-img-top" style="height:250px" alt="book img" />
-                }
-                else
-                {
-                    <img src="@Html.DisplayFor(modelItem => item.Image)" class="card-img-top" style="height:250px" alt="book img" />
-                }
-
-            </a>
-            <div class="caption">
-                <a href="@Url.Action("Book","Home",new {id=item.BookId})">
-                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h5>
-                </a>
-                <p class="card-text"><a href="/Home/Author/@item.AuthorId">@Html.DisplayFor(modelItem => item.Author.FullName)</a></p>
-                <p class="card-text">@Html.DisplayFor(modelItem => item.UnitPrice)</p>
-                <a href="" class="btn btn-primary btn-sm">İncele</a>
-                <a href="#" class="btn btn-success btn-sm">Sepete Ekle</a>
+                    </a>
+                    <div class="caption">
+                        <a href="@Url.Action("Book","Home",new {id=item.BookId})">
+                            <h5 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h5>
+                        </a>
+                        <p class="card-text"><a href="/Home/Author/@item.AuthorId">@Html.DisplayFor(modelItem => item.Author.FullName)</a></p>
+                        <p class="card-text">@Html.DisplayFor(modelItem => item.UnitPrice)</p>
+                        <a href="" class="btn btn-primary btn-sm">İncele</a>
+                        <a href="#" class="btn btn-success btn-sm">Sepete Ekle</a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 }
+
