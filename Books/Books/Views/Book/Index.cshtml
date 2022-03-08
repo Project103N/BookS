@@ -80,7 +80,7 @@
         @Html.DisplayFor(modelItem => item.TotalSell)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.Image)
+        <img src="@Html.DisplayFor(modelItem => item.Image)"
     </td>
     <td>
         @Html.ActionLink("Edit", "Edit", new { id = item.BookId }) |
