@@ -264,6 +264,18 @@
     <Compile Include="Migrations\202203071310382_m16.Designer.cs">
       <DependentUpon>202203071310382_m16.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202203081357120_m17.cs" />
+    <Compile Include="Migrations\202203081357120_m17.Designer.cs">
+      <DependentUpon>202203081357120_m17.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203081408284_m18.cs" />
+    <Compile Include="Migrations\202203081408284_m18.Designer.cs">
+      <DependentUpon>202203081408284_m18.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203081430078_m20.cs" />
+    <Compile Include="Migrations\202203081430078_m20.Designer.cs">
+      <DependentUpon>202203081430078_m20.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -390,6 +402,7 @@
     <Content Include="Views\Shared\_BookPartial.cshtml" />
     <Content Include="Views\Home\Category.cshtml" />
     <Content Include="Views\Home\Author.cshtml" />
+    <Content Include="Views\Shared\_CategoriesPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -452,6 +465,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203071310382_m16.resx">
       <DependentUpon>202203071310382_m16.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203081357120_m17.resx">
+      <DependentUpon>202203081357120_m17.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203081408284_m18.resx">
+      <DependentUpon>202203081408284_m18.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203081430078_m20.resx">
+      <DependentUpon>202203081430078_m20.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

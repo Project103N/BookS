@@ -11,6 +11,7 @@ namespace Books.ViewModels
     {
         [Key]
         public int ID { get; set; }
+        public Category Category { get; set; }
         public IEnumerable<Book> NewBooks { get; set; }
         public IEnumerable<Book> AllCategoryBooks { get; set; }
     }
