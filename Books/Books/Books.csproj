@@ -272,6 +272,10 @@
     <Compile Include="Migrations\202203081359490_Photo_Upload1.Designer.cs">
       <DependentUpon>202203081359490_Photo_Upload1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202203081427236_BookPhoto_Control.cs" />
+    <Compile Include="Migrations\202203081427236_BookPhoto_Control.Designer.cs">
+      <DependentUpon>202203081427236_BookPhoto_Control.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -467,6 +471,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203081359490_Photo_Upload1.resx">
       <DependentUpon>202203081359490_Photo_Upload1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203081427236_BookPhoto_Control.resx">
+      <DependentUpon>202203081427236_BookPhoto_Control.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

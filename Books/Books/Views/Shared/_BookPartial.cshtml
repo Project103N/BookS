@@ -6,9 +6,15 @@
 
         <div class="thumbnail" >
             <a href="@Url.Action("Book","Home",new {id=item.BookId})">
-               
-               <img src="@Html.DisplayFor(modelItem => item.Image)"  class="card-img-top" style="height:250px"  alt="book img" />
-              
+                @if (item.Image == null)
+                {
+                    <img src="https://sciendo.com/product-not-found.png" class="card-img-top" style="height:250px" alt="book img" />
+                }
+                else
+                {
+                    <img src="@Html.DisplayFor(modelItem => item.Image)" class="card-img-top" style="height:250px" alt="book img" />
+                }
+
             </a>
             <div class="caption">
                 <a href="@Url.Action("Book","Home",new {id=item.BookId})">
