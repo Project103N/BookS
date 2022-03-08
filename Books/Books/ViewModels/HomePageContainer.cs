@@ -17,5 +17,7 @@ namespace BookS.Models
         public ICollection<Author> AuthorsOfMonth { get; set; }
         public ICollection<Book> PriceRanges { get; set; }
         public ICollection<Book> Prices { get; set; }
+        public ICollection<Book> Images { get; set; } //eklendi
+
     }
 }

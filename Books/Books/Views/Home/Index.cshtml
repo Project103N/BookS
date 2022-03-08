@@ -13,7 +13,24 @@
     <div class="col-md-3">
         @Html.Partial("_CategoriesPartial", Model.Categories)
     </div>
-
+<div>
+    <h4>HomePageContainer</h4>
+    <hr />
+</div>
+<ul>
+    @foreach (var item in Model.Categories)
+    {
+        <li>
+            <a href="/Home/Category/@item.CategoryID">
+                @item.CategoryName
+            </a>
+        </li>
+    }
+</ul>
+<hr />
+<section id="topsellers">
+        @Html.Partial("_BookPartial",Model.TopSellers)
+</section>
     <div class="col-md-9">
         <section id="topsellers">
             @Html.Partial("_BookPartial", Model.TopSellers)

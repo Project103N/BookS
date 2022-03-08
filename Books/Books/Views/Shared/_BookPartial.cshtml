@@ -1,11 +1,22 @@
-﻿@model IEnumerable<Books.Models.Book>
+@model IEnumerable<Books.Models.Book>
 
 @foreach (var item in Model)
 {
+    <div class="col-4 col-md-3 " >
+
+        <div class="thumbnail" >
     <div class="col-4 col-md-3 ">
         <div class="thumbnail">
             <a href="@Url.Action("Book","Home",new {id=item.BookId})">
-                <img class="card-img-top" src="https://www.ucuzkitapal.com/images/thumbnails/500/500/detailed/15/9786257693622.webp" alt="">
+                @if (item.Image == null)
+                {
+                    <img src="https://sciendo.com/product-not-found.png" class="card-img-top" style="height:250px" alt="book img" />
+                }
+                else
+                {
+                    <img src="@Html.DisplayFor(modelItem => item.Image)" class="card-img-top" style="height:250px" alt="book img" />
+                }
+
             </a>
             <div class="caption">
                 <a href="@Url.Action("Book","Home",new {id=item.BookId})">

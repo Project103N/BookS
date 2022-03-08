@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Books.Models;
-
+using System.ComponentModel.DataAnnotations.Schema;
 namespace Books.Models
 {
     public class Book
@@ -27,8 +27,12 @@ namespace Books.Models
         public decimal TotalSell { get; set; }
         public int PublisherId { get; set; }
         public virtual Publisher Publisher { get; set; }
-
         public ICollection<Category> Categories { get; set; }
+        public string Image { get; set; }
+
+        [NotMapped]
+        public HttpPostedFileBase ImageFile { get; set; }
+        
 
 
     }

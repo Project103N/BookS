@@ -8,7 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using Books.Models;
 using Books.Repositories;
-
+using System.IO;
+using System.Data.Entity.Infrastructure;
 namespace Books.Controllers
 {
     public class BookController : Controller
@@ -29,6 +30,7 @@ namespace Books.Controllers
         {
             var books = db.Books.Include(b => b.Author).Include(b => b.Publisher);
             return View(booksRepository.Get());
+            
         }
 
         // GET: Book/Details/5
@@ -55,16 +57,30 @@ namespace Books.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BookId,Name,AuthorId,PageCount,UnitPrice,Details,PublishDate,UnitsInStock,IsActive,TotalSell,PublisherId")] Book book)
+        public ActionResult Create([Bind(Include = "BookId,Name,AuthorId,PageCount,UnitPrice,Details,PublishDate,UnitsInStock,IsActive,TotalSell,PublisherId,Image,ImageFile")] Book book)
         {
             if (ModelState.IsValid)
             {
+                string fileName = Path.GetFileNameWithoutExtension(book.ImageFile.FileName);
+                string extension = Path.GetExtension(book.ImageFile.FileName);
+                fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+                book.Image = "../Image/" + fileName;
+                fileName = Path.Combine(Server.MapPath("../Image/"), fileName);
+                book.ImageFile.SaveAs(fileName);
+                ModelState.Clear();
                 booksRepository.Add(book);
                 return RedirectToAction("Index");
             }
 
             ViewBag.AuthorId = new SelectList(db.Authors, "AuthorID", "FullName", book.AuthorId);
             ViewBag.PublisherId = new SelectList(db.Publishers, "PublisherID", "PublisherName", book.PublisherId);
+            //string fileName = Path.GetFileNameWithoutExtension(book.ImageFile.FileName);
+            //string extension = Path.GetExtension(book.ImageFile.FileName);
+            //fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+            //book.Image = "../Image/" + fileName;
+            //fileName = Path.Combine(Server.MapPath("../Image/"),fileName);
+            //book.ImageFile.SaveAs(fileName);
+            //ModelState.Clear();
             return View(book);
         }
 
