@@ -1,0 +1,18 @@
+﻿@using Books.Models
+@model IEnumerable<Category>
+
+<ul class="list-group">
+    @foreach (var item in Model)
+    {
+        <li class="category-li list-group-item">
+            <a href="/Home/Category/@item.CategoryID">
+                @item.CategoryName
+            </a>
+        </li>
+    }
+</ul>
+
+@section style
+{
+    
+}

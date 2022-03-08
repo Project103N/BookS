@@ -21,20 +21,20 @@ namespace Books.Controllers
             return View(db.Authors.ToList());
         }
 
-        // GET: Author/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Author author = db.Authors.Find(id);
-            if (author == null)
-            {
-                return HttpNotFound();
-            }
-            return View(author);
-        }
+        //// GET: Author/Details/5
+        //public ActionResult Details(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    Author author = db.Authors.Find(id);
+        //    if (author == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(author);
+        //}
 
         // GET: Author/Create
         public ActionResult Create()

@@ -69,6 +69,7 @@ namespace Books.Controllers
         public ActionResult Category(int id)
         {
             CategoryPageContent cpc = new CategoryPageContent();
+            cpc.Category = dbCategories.Get(id);
             cpc.NewBooks = dbCategories.GetAllCategoryBooks(id).OrderByDescending(b=>b.PublishDate).Take(2);
             // TODO: Bu metoda sayı limiti eklenebilir. Overload olarak.
 
